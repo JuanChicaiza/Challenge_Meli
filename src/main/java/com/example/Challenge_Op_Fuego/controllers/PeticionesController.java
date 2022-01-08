@@ -76,14 +76,6 @@ public class PeticionesController {
                 peticionesBDModel.setSplit("NO");
                 peticionesSatelitesService.registrarPeticion(peticionesBDModel);
             }
-            if( positions.length != distances.length )
-                throw new LocalizacionException("Numero de Posiciones Diferente al Numero de Distancias");
-
-            if( positions.length < 2 )
-                throw new LocalizacionException("Numero de Posiciones Insuficientes");
-
-            if (distances.length < 2)
-                throw new LocalizacionException("Numero de Distancias Insuficientes");
 
             double [] position = localizacionService.getLocation(positions,distances);
             PosicionModel posicionModel = new PosicionModel(position);

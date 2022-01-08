@@ -59,15 +59,6 @@ public class SateliteControler {
                 mensajes.add(satellites.getMessage());
             }
 
-            if( positions.length != distances.length )
-                throw new LocalizacionException("Numero de Posiciones Diferente al Numero de Distancias");
-
-            if( positions.length < 2 )
-                throw new LocalizacionException("Numero de Posiciones Insuficientes");
-
-            if (distances.length < 2)
-                throw new LocalizacionException("Numero de Distancias Insuficientes");
-
             double [] position = localizacionService.getLocation(positions,distances);
             PosicionModel posicionModel = new PosicionModel(position);
             if(mensajes.size() <2)
