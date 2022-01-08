@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/satelites")
+@RequestMapping("/api/v1/satelites")
 public class InformacionSateliteController {
     @Autowired
     InformacionSateliteService informacionSateliteService;

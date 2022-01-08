@@ -3,20 +3,20 @@ package com.example.Challenge_Op_Fuego.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PeticionesSatelitesModel {
-    List<SatelitesModel> satellites;
+public class NaveModel {
+    List<NaveAlmacenadaModel> satellites;
 
-    public List<SatelitesModel> getSatellites() {
+    public List<NaveAlmacenadaModel> getSatellites() {
         return satellites;
     }
 
-    public void setSatellites(List<SatelitesModel> satelites) {
+    public void setSatellites(List<NaveAlmacenadaModel> satelites) {
         this.satellites = satelites;
     }
 
     public List<List<String>> getMensajesPeticion(){
         List<List<String>> mensajes = new ArrayList<List<String>>();
-        for(SatelitesModel s: satellites){
+        for(NaveAlmacenadaModel s: satellites){
             mensajes.add(s.getMessage());
         }
         return mensajes;

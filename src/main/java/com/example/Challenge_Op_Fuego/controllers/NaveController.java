@@ -19,14 +19,14 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/topsecret")
-public class PeticionesController {
+public class NaveController {
     @Autowired
     InformacionSateliteService informacionSateliteService;
 
     ArrayList<InformacionSateliteModel> infoSatellites;
     InformacionSateliteModel infoSatellite;
-    PeticionesSatelitesModel satellites;
-    SatelitesModel satellite;
+    NaveModel satellites;
+    NaveAlmacenadaModel satellite;
     PeticionesBDModel peticionesBDModel ;
     Optional<NumeroPeticionModel> numeroPeticionModel;
     NumeroPeticionModel numeroPeticion;
@@ -45,7 +45,7 @@ public class PeticionesController {
     RespuestaService respuestaService;
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity topSecret(RequestEntity<PeticionesSatelitesModel> requestEntity)  {
+    public ResponseEntity topSecret(RequestEntity<NaveModel> requestEntity)  {
 
         respuestasDBModel = new RespuestasDBModel();
         numeroPeticionModel = peticionesSatelitesService.consultarNumero(1);

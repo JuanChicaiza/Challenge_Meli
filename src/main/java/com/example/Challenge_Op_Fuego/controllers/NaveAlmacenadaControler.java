@@ -12,11 +12,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/topsecret_split")
-public class SateliteControler {
+public class NaveAlmacenadaControler {
     @Autowired
     SateliteService sateliteService;
 
@@ -35,8 +34,8 @@ public class SateliteControler {
     @Autowired
     RespuestaService respuestaService;
 
-    ArrayList<SatelitesModel> satellitesModel;
-    SatelitesModel satellites;
+    ArrayList<NaveAlmacenadaModel> satellitesModel;
+    NaveAlmacenadaModel satellites;
     ArrayList<InformacionSateliteModel> infoSatellites;
     InformacionSateliteModel infoSatellite;
 
@@ -77,13 +76,13 @@ public class SateliteControler {
     }
 
     @PostMapping(path = "/{satellite_name}")
-    public SatelitesModel registrarSatelite(@PathVariable("satellite_name") String name,@RequestBody SatelitesModel satelitesModel){
-        satelitesModel.setName(name);
-        return sateliteService.registrarSatelite(satelitesModel);
+    public NaveAlmacenadaModel registrarSatelite(@PathVariable("satellite_name") String name, @RequestBody NaveAlmacenadaModel naveAlmacenadaModel){
+        naveAlmacenadaModel.setName(name);
+        return sateliteService.registrarSatelite(naveAlmacenadaModel);
     }
 
     @GetMapping(path = "/satelites")
-    public ArrayList<SatelitesModel> buscarSatelites(){
+    public ArrayList<NaveAlmacenadaModel> buscarSatelites(){
         return sateliteService.consultarSatelites();
     }
 }

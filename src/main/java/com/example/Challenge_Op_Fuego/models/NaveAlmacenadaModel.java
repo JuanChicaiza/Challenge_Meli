@@ -8,13 +8,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "satelites")
-public class SatelitesModel {
+@Table(name = "nave")
+public class NaveAlmacenadaModel {
     @Id
     private String name;
     private double distance;
     @ElementCollection()
-    @CollectionTable(name = "mensajes_satelite",joinColumns = @JoinColumn(name = "name"))
+    @CollectionTable(name = "mensajes_nave",joinColumns = @JoinColumn(name = "name"))
     @OrderColumn
     private List<String> message;
 

@@ -1,7 +1,7 @@
 package com.example.Challenge_Op_Fuego.services;
 
-import com.example.Challenge_Op_Fuego.models.SatelitesModel;
-import com.example.Challenge_Op_Fuego.repositories.SateliteRepository;
+import com.example.Challenge_Op_Fuego.models.NaveAlmacenadaModel;
+import com.example.Challenge_Op_Fuego.repositories.NaveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +10,14 @@ import java.util.ArrayList;
 @Service
 public class SateliteService {
     @Autowired
-    SateliteRepository sateliteRepository;
+    NaveRepository naveRepository;
 
-    public ArrayList<SatelitesModel> consultarSatelites(){
-        return (ArrayList<SatelitesModel>) sateliteRepository.findAll();
+    public ArrayList<NaveAlmacenadaModel> consultarSatelites(){
+        return (ArrayList<NaveAlmacenadaModel>) naveRepository.findAll();
     }
 
-    public SatelitesModel registrarSatelite(SatelitesModel satelitesModel){
-        return sateliteRepository.save(satelitesModel);
+    public NaveAlmacenadaModel registrarSatelite(NaveAlmacenadaModel naveAlmacenadaModel){
+        return naveRepository.save(naveAlmacenadaModel);
     }
 
 }
