@@ -20,7 +20,7 @@ public class MensajeService {
 
         return mensaje;
     }
-    public List<String> obtenerPalabras(List<List<String>> listaMensajes){
+    private List<String> obtenerPalabras(List<List<String>> listaMensajes){
 
         List<String> listaPalabras = new ArrayList<String>();
         for( List<String> msj : listaMensajes){
@@ -32,7 +32,7 @@ public class MensajeService {
         return listaPalabras;
     }
 
-    public String mensajeCompleto(List<List<String>> listaMensajes){
+    private String mensajeCompleto(List<List<String>> listaMensajes){
 
         String auxiliar = "";
         for(List<String> m : listaMensajes){
@@ -45,7 +45,7 @@ public class MensajeService {
         }
         return "";
     }
-    public boolean validarTamanoMensaje(List<List<String>> listaMensajes, int tamano){
+    private boolean validarTamanoMensaje(List<List<String>> listaMensajes, int tamano){
         for(List<String> m : listaMensajes){
             if(m.size() < tamano){
                 return false;
@@ -54,7 +54,7 @@ public class MensajeService {
         return true;
     }
 
-    public boolean validarMensajePalabras(List<String> palabras, String mensaje){
+    private boolean validarMensajePalabras(List<String> palabras, String mensaje){
         List<String> msj = Arrays.stream(mensaje.split(" ")).collect(Collectors.toList());
         Collections.sort(palabras);
         Collections.sort(msj);
