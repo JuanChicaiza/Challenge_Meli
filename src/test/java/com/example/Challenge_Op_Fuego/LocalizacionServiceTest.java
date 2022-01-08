@@ -14,7 +14,7 @@ public class LocalizacionServiceTest {
     LocalizacionService localizacionService;
 
     @Test
-    public void getLocation() throws Exception{
+    public void getLocation(){
         double[][] positions = new double[][]{{-500,-200},{100,-100},{500,100}};
         double[] distances = new double[]{100,115.5,142.7};
         double[] expectedPosition = new double[]{-58.315252587138595,-69.55141837312165};
