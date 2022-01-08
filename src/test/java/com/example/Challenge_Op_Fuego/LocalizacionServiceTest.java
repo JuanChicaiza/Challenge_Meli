@@ -15,17 +15,17 @@ public class LocalizacionServiceTest {
 
     @Test
     public void getLocation() throws Exception{
-        double[][] posiciones = new double[][]{{-500,-200},{100,-100},{500,100}};
-        double[] distancias = new double[]{100,115.5,142.7};
-        double[] posicionEsperada = new double[]{-58.315252587138595,-69.55141837312165};
-        double[] posicioncalculada = localizacionService.getLocation(posiciones,distancias);
-        for(int i=0;i<posicioncalculada.length;i++){
-            assertEquals(posicionEsperada[i],posicioncalculada[i]);
+        double[][] positions = new double[][]{{-500,-200},{100,-100},{500,100}};
+        double[] distances = new double[]{100,115.5,142.7};
+        double[] expectedPosition = new double[]{-58.315252587138595,-69.55141837312165};
+        double[] calculatedPosition = localizacionService.getLocation(positions,distances);
+        for(int i=0;i<calculatedPosition.length;i++){
+            assertEquals(expectedPosition[i],calculatedPosition[i]);
         }
     }
 
     @Test
-    public void getLocationWith3PositionsSmall(){
+    public void getLocationSmall(){
         double[][] positions = new double[][]{{1.0}, {2.0}, {3.0}};
         double[] distances = new double[]{1.1, 0.1, 0.9};
         double[] expectedPosition = new double[]{2.1};
