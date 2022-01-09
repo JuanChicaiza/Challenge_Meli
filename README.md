@@ -1,5 +1,5 @@
-# Challenge_Meli
-Challenge Meli Op Quasar Fuego Juan Pablo Chicaiza
+# Challenge Meli
+Challenge Meli Op Fuego Quasar
 
 ## Construido con 🛠️
 - Framework spring boot
